@@ -114,8 +114,9 @@ WHERE REV_2020.REGION = REV_2019.REGION
 
 /*Another Approach using Oracle Analytics Functions*/ --WIP
 
-SELECT REGION, SUM(TRANS_AMT) TRANS_AMT, to_char(trans_date,'YYYY') REV_YEAR,
-LAG(SUM(TRANS_AMT), 1) OVER (ORDER BY to_char(trans_date,'YYYY'))
+SELECT REGION, to_char(trans_date,'YYYY') REV_YEAR, SUM(TRANS_AMT) TRANS_AMT
+/*LAG(SUM(TRANS_AMT), 1) OVER (ORDER BY to_char(trans_date,'YYYY')),
+Round((SUM(TRANS_AMT) - LAG(SUM(TRANS_AMT), 1) OVER (ORDER BY to_char(trans_date,'YYYY')))/LAG(SUM(TRANS_AMT), 1) OVER (ORDER BY to_char(trans_date,'YYYY')))* 100),3) || '%'*/
 FROM revenue
 WHERE to_char(trans_date,'YYYY') IN ('2019','2020')
 GROUP BY REGION, to_char(trans_date,'YYYY')
