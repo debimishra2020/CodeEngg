@@ -88,7 +88,7 @@ select * from revenue;
 select customer_name, rnk from (
 select c.customer_name, sum(trans_amt),
 dense_rank() over(order by sum(trans_amt) desc) rnk
-from sv_mdm_adhoc.revenue r, sv_mdm_adhoc.customer c, sv_mdm_adhoc.product p
+from revenue r, customer c, product p
 where r.customer_id = c.customer_id and r.product_id = p.product_id
 and product_name = 'Security01'
 and to_char(trans_date,'MON-YYYY') = 'FEB-2020'
@@ -98,11 +98,11 @@ group by c.customer_name
 /*Display Year over Year comparision FY 2020*/
 
 WITH REV_2020 AS (
-select REGION,SUM(TRANS_AMT) REV_2020_TRNS_AMT from sv_mdm_adhoc.revenue
+select REGION,SUM(TRANS_AMT) REV_2020_TRNS_AMT from revenue
 WHERE to_char(trans_date,'YYYY') = '2020'
 GROUP BY REGION
 ), REV_2019 AS (
-select REGION,SUM(TRANS_AMT) REV_2019_TRNS_AMT from sv_mdm_adhoc.revenue
+select REGION,SUM(TRANS_AMT) REV_2019_TRNS_AMT from revenue
 WHERE to_char(trans_date,'YYYY') = '2019'
 GROUP BY REGION
 )
@@ -110,4 +110,14 @@ SELECT REV_2020_TRNS_AMT,REV_2019_TRNS_AMT,REV_2020.REGION
 ROUND(((REV_2020_TRNS_AMT-REV_2019_TRNS_AMT)/REV_2019_TRNS_AMT)*100,5) AS YOY_PCT
 FROM REV_2020, REV_2019
 WHERE REV_2020.REGION = REV_2019.REGION
+;
+
+/*Another Approach using Oracle Analytics Functions*/ --WIP
+
+SELECT REGION, SUM(TRANS_AMT) TRANS_AMT, to_char(trans_date,'YYYY') REV_YEAR,
+LAG(SUM(TRANS_AMT), 1) OVER (ORDER BY to_char(trans_date,'YYYY'))
+FROM revenue
+WHERE to_char(trans_date,'YYYY') IN ('2019','2020')
+GROUP BY REGION, to_char(trans_date,'YYYY')
+ORDER BY 1 ASC
 ;
