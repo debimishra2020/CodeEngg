@@ -1,0 +1,1 @@
+/*Only DBA can execute below commands or login user should has DBA privileges to run below quries.*/
