@@ -3,7 +3,7 @@
 CREATE USER PTUNING INDENTIFIED BY PTUNING;
 GRANT DBA TO PTUNING;
 
-/*Load Data Into Tables*/
+/*Load Data Into Tables to see Explain Plan or the Query Execution Path*/
 
 SET AUTOTRACE ON EXPLAIN STATISTICS;
 SET AUTOTRACE TRACE ONLY;
