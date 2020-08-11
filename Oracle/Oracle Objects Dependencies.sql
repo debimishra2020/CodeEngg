@@ -1,10 +1,8 @@
-/*
-Problem Statement - You might want to find out – which tables/ othere objects refers to which objects? 
+/*Problem Statement - You might want to find out – which tables/ othere objects refers to which objects? 
 Are there any Views/ Indexes asociated? If I change the table design, how many and which objects it will be affected? 
 Such Questions etc..
 
-The table ALL_DEPENDENCIES has the answer to those questions: I have demonstrated it and coding as below.
-*/
+The table ALL_DEPENDENCIES has the answer to those questions: I have demonstrated it and coding as below.*/
 SET SERVEROUTPUT ON ;
 
 DECLARE
