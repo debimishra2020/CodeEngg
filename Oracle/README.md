@@ -1,0 +1,3 @@
+** A Readme File ** Last Update Date: Aug-11-20
+
+Oracle basics SQLs, Tuning, Catalog Definition etc...
