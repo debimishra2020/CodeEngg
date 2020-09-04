@@ -97,6 +97,11 @@ group by c.customer_name
 
 /*Display Year over Year comparision FY 2020*/
 
+EAST,2020,$200
+EAST,2019,$198
+.....
+.....
+
 WITH REV_2020 AS (
 select REGION,SUM(TRANS_AMT) REV_2020_TRNS_AMT from revenue
 WHERE to_char(trans_date,'YYYY') = '2020'
@@ -114,11 +119,31 @@ WHERE REV_2020.REGION = REV_2019.REGION
 
 /*Another Approach using Oracle Analytics Functions*/ --WIP
 
-SELECT REGION, to_char(trans_date,'YYYY') REV_YEAR, SUM(TRANS_AMT) TRANS_AMT
-/*LAG(SUM(TRANS_AMT), 1) OVER (ORDER BY to_char(trans_date,'YYYY')),
-Round((SUM(TRANS_AMT) - LAG(SUM(TRANS_AMT), 1) OVER (ORDER BY to_char(trans_date,'YYYY')))/LAG(SUM(TRANS_AMT), 1) OVER (ORDER BY to_char(trans_date,'YYYY')))* 100),3) || '%'*/
+SELECT REGION, to_char(trans_date,'YYYY') REV_YEAR, SUM(TRANS_AMT) TRANS_AMT,
+LAG(SUM(TRANS_AMT)) OVER (ORDER BY to_char(trans_date,'YYYY')),
+Round((SUM(TRANS_AMT) - LAG(SUM(TRANS_AMT)) OVER (ORDER BY to_char(trans_date,'YYYY')))/LAG(SUM(TRANS_AMT)) OVER (ORDER BY to_char(trans_date,'YYYY')))* 100),3) || '%' AS PCT
 FROM revenue
 WHERE to_char(trans_date,'YYYY') IN ('2019','2020')
 GROUP BY REGION, to_char(trans_date,'YYYY')
-ORDER BY 1 ASC
-;
+ORDER BY 1 ASC, 2 ASC;
+
+/*Daily wise Record Count: Growth Percentage*/
+CYCLE_DT, REC_CNT
+01/01/2020, 78
+01/02/2020, 83
+01/03/2020, 95  
+01/04/2020, 90
+01/05/2020, 92
+01/06/2020, 97
+
+OutPut:
+CYCLE_DT, REC_CNT, PCT_GROWTH
+01/01/2020, 78
+01/02/2020, 83, 6.345
+01/03/2020, 95, 15.567  
+
+SELECT CYCLE_DT, REC_CNT,
+LAG(REC_CNT) OVER (ORDER BY CYCLE_DT) AS PREV_CNT,
+ROUND((REC_CNT - (LAG(REC_CNT) OVER (ORDER BY CYCLE_DT))/(LAG(REC_CNT) OVER (ORDER BY CYCLE_DT)))*100,3) || '%' AS PCT_GROWTH                                                                                   
+FROM PRTY_MASTER
+ORDER BY 1 ASC;                                                                                               
