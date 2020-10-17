@@ -13,3 +13,4 @@ Essential Design Principles For Tableau
   - [Quiz 1: Effective and Ineffective Visuals] - 10/15/2020
   - [Quiz 2: Visual Perception & Cognitive Load] - 10/16/2020
   - [Quiz 3: Design & Exploratory Analysis] - 10/16/2020
+  - [Quiz 4: Design for Understanding] - 10/17/2020
