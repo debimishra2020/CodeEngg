@@ -14,6 +14,7 @@ Essential Design Principles For Tableau
   - [Quiz 2: Visual Perception & Cognitive Load] - 10/16/2020
   - [Quiz 3: Design & Exploratory Analysis] - 10/16/2020
   - [Quiz 4: Design for Understanding] - 10/17/2020
+  - [Peer-graded Assignment: Designing a Visualization for Your Manager] - 10/17/2020
   
 Visual Analytics with Tableau
   - [Quiz 1: Getting Started and Charting] - 10/18/2020
