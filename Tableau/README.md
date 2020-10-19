@@ -18,3 +18,6 @@ Essential Design Principles For Tableau
   
 Visual Analytics with Tableau
   - [Quiz 1: Getting Started and Charting] - 10/18/2020
+  - [Peer-graded Assignment:.....] - WIP
+  - [Quiz 2: Visual Analytics with Tableau - Dates] - 10/19/2020
+  - [Peer-graded Assignment:.....] - WIP
