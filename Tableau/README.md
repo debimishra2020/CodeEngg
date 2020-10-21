@@ -21,3 +21,7 @@ Visual Analytics with Tableau
   - [Peer-graded Assignment:.....] - WIP
   - [Quiz 2: Visual Analytics with Tableau - Dates] - 10/19/2020
   - [Peer-graded Assignment:.....] - WIP
+  - [Quiz 3: Visual Analytics with Tableau - Table Calculations] - 10/20/2020
+  - [Peer-graded Assignment:.....] - WIP
+  - [Quiz 4: Visual Analytics with Tableau - Mapping] - 10/20/2020
+  - [Peer-graded Assignment:.....] - WIP
