@@ -25,3 +25,9 @@ Visual Analytics with Tableau
   - [Peer-graded Assignment:.....] - WIP
   - [Quiz 4: Visual Analytics with Tableau - Mapping] - 10/20/2020
   - [Peer-graded Assignment:.....] - WIP
+
+Creating Dashboards and Storytelling with Tableau
+  - [Quiz 1: Planning and Preproduction: Aligning your Audience, Stakeholders, and Data] - 10/22/2020
+  - [Quiz 2: Key Metrics, Indicators, and Decision Triggers] - 10/22/2020
+  - [Quiz 3: Dashboard and Storytelling with Data] - 10/23/2020
+  - [Quiz 4: Tell the Story of Your Data] - 10/24/2020
