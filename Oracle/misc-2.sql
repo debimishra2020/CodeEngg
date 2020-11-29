@@ -98,8 +98,3 @@ FROM(
      HAVING COUNT(Order_Id) >= 2
    )S
 WHERE S.rn = 2
-
-
-
-https://leetcode.com/discuss/interview-question/456001/amazon-data-scientist-tech-interview-sql-coding-questions
-
