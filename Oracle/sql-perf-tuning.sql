@@ -4,7 +4,6 @@
 https://www.oratable.com/how-to-lock-a-row-in-oracle/
 https://stackoverflow.com/questions/42697818/bulk-update-with-commit-in-oracle
 
- 
 --Oracle provides FOR UPDATE Clause in SELECT Query using Cursor to lock certain Records while DML operation so that other Users can not modify the same data
 --Once you open the cursor, Oracle will lock all rows selected by the SELECT ... FOR UPDATE statement in the tables specified in the FROM clause. 
 --And these rows will remain locked until the cursor is closed or the transaction is completed with either COMMIT or ROLLBACK.
