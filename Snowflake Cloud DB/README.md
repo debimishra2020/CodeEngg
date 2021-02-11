@@ -1,3 +1,3 @@
-** A Readme File ** Last Update Date: Aug-07-20
+** A Readme File ** Last Update Date: Feb-11-21
 
-Few Customer appreciations/ good words has been Attached.
+This repository is based on Snowflake various Features along with SQL Coding and etc.
