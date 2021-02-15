@@ -1,3 +1,3 @@
-** A Readme File ** Last Update Date: Feb-11-21
+** A Readme File ** Last Update Date: Feb-15-21
 
-This repository is based on Snowflake various Features along with SQL Coding and etc.
+- Snowflake's new feature Dynamic Data Masking provides column-level security to Snowflake data. You can manage it by creating appropriate roles and policies. This video explores detailed steps to apply and manage the data masking feature.
