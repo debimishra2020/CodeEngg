@@ -1,6 +1,6 @@
-Configuring a Snowflake Storage Integration to Access Amazon S3 - 
-https://docs.snowflake.com/en/user-guide/data-load-s3-config.html
-https://docs.snowflake.com/en/user-guide/data-load-s3-config-storage-integration.html
+--Configuring a Snowflake Storage Integration to Access Amazon S3 - 
+--https://docs.snowflake.com/en/user-guide/data-load-s3-config.html
+--https://docs.snowflake.com/en/user-guide/data-load-s3-config-storage-integration.html
 
 --Use Role SYSADMIN;
 --Use Warehouse COMPUTE_WH;
