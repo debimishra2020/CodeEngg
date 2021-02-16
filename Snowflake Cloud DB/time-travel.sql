@@ -7,7 +7,6 @@ Show Parameters In ACCOUNT;
 Show Parameters Like '%DATA%';
 Show Parameters Like '%DATA%' In ACCOUNT;
 
-
 Use Role ACCOUNTADMIN;
 Alter DATABASE FINANCE Set DATA_RETENTION_TIME_IN_DAYS =1;
 
