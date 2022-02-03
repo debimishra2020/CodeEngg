@@ -250,3 +250,39 @@ FROM TABLE(snflk_demo.information_schema.QUERY_HISTORY()) WHERE Session_ID =
             (Select SESSION_ID From snflk_demo.snflk_sch.tbl_GET_SESSION);
 Call system$wait(20);
 Commit;
+
+
+
+--Binding Nulls inside Stored Procedure
+create table demo_db.public.load_data(
+  raw varchar2(10)
+);
+select * from demo_db.public.load_data;
+--truncate table demo_db.public.load_data;
+
+call demo_db.public.load_data();
+
+CREATE OR REPLACE PROCEDURE demo_db.public.load_data()
+  Returns string NOT Null
+  LANGUAGE JAVASCRIPT
+  AS     
+  $$  
+var result = "";
+var raw_data = null;
+try {
+    snowflake.execute({
+      sqlText: `Insert Into demo_db.public.load_data(raw) Values (:1)`
+      ,binds: [raw_data].map(function(x)
+                      {return x === undefined ? null : x
+                      })
+      });
+    result = "Succeeded";
+  }
+catch (err)  {
+    result =  "Failed: Code: " + err.code + "\n  State: " + err.state;
+    result += "\n  Message: " + err.message;
+    result += "\nStack Trace:\n" + err.stackTraceTxt; 
+  }
+return result;
+  $$
+;
