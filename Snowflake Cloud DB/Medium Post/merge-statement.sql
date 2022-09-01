@@ -1,8 +1,8 @@
 ----Account Setup----
-Use Role Role_Name;
-Use Warehouse Warehouse_Name;
-Use DataBase DataBase_Name;
-Use Schema Schema_Name;
+Use Role <Role_Name>;
+Use Warehouse <Warehouse_Name>;
+Use DataBase <DataBase_Name>;
+Use Schema <Schema_Name>;
 
 --------------Source Table Structure--------------
 Create OR Replace Table DataBase_Name.Schema_Name.CUSTOMER (
